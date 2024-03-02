@@ -7,11 +7,11 @@ export const databaseProviders = [
     useFactory: async () => {
       const dataSource = new DataSource({
         type: 'mysql',
-        host: 'localhost',
-        port: 3306,
+        host: 'roundhouse.proxy.rlwy.net',
+        port: 36699,
         username: 'root',
-        password: '1234',
-        database: 'frothub',
+        password: '-cCbeED1ac64f2gGg53Gbda-CEHh5CDa',
+        database: 'railway',
         entities: [
             Usuario,
         ],
