@@ -1,3 +1,4 @@
+import { UsuarioVeiculo } from 'src/modules/usuario-veiculo/entities/usuario-veiculo.entity';
 import { Usuario } from 'src/modules/usuario/entities/usuario.entity';
 import { Veiculo } from 'src/modules/veiculos/entities/veiculo.entity';
 import { DataSource } from 'typeorm';
@@ -15,7 +16,8 @@ export const databaseProviders = [
         database: 'railway',
         entities: [
             Usuario,
-            Veiculo
+            Veiculo,
+            UsuarioVeiculo
         ],
         synchronize: true,
       });
