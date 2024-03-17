@@ -1,4 +1,4 @@
-import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 @Entity()
 export class UsuarioVeiculo {
@@ -7,19 +7,24 @@ export class UsuarioVeiculo {
     id: number
 
     @Column()
+    idCliente: number
+
+    @Column()
     idUsuario: number
 
     @Column()
     idVeiculo: number
 
     @Column()
+    @CreateDateColumn()
     dataVinculacao: Date
 
     @Column()
-    dataDesvinculacao: Date
+    @UpdateDateColumn()
+    dataDesvinculacao: Date | null
 
     @Column()
-    quilometragemFinal: number
+    quilometragemFinal: number | null
 
     @Column()
     quilometragemInicial: number
