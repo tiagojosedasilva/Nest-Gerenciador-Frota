@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class UsuarioVeiculo {
@@ -24,6 +24,7 @@ export class UsuarioVeiculo {
     @Column()
     quilometragemInicial: number
 
+    
     // fotoQuilometrageInicial
 
     // fotoQuilometrageFinal

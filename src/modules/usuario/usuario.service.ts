@@ -24,6 +24,10 @@ export class UsuarioService {
     return await this.usuarioRepository.findOneBy({id});
   }
 
+  async findOneForEmail(email: string){
+    return await this.usuarioRepository.findOne({where: {email: email}})
+  }
+
   async update(id: number, updateUsuarioDto: UpdateUsuarioDto) {
     return await this.usuarioRepository.update(id, updateUsuarioDto)
   }
@@ -31,4 +35,5 @@ export class UsuarioService {
   async remove(id: number) {
     return await this.usuarioRepository.delete(id)
   }
+
 }

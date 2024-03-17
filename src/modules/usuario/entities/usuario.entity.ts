@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { BeforeInsert, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity("usuario")
 export class Usuario {
@@ -51,5 +51,8 @@ export class Usuario {
     @Column()
     dataAtualizacao: Date;
 
-
+    // @BeforeInsert()
+    // hashPassword(){
+    //     this.senha = bcrypt.hashSync(this.senha)
+    // }
 }
