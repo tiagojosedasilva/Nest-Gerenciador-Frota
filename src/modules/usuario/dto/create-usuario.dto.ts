@@ -14,7 +14,7 @@ export class CreateUsuarioDto {
     
     rg: string;
     
-    dataNascimento: Date;
+    dataNascimento: string;
     
     celular: string;
     
