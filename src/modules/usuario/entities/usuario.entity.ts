@@ -34,7 +34,7 @@ export class Usuario {
     celular: string;
     
     @Column()
-    endereço: string;
+    endereco: string;
     
     @Column()
     cep: string;

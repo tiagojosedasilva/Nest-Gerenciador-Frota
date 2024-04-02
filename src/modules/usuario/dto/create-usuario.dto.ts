@@ -18,7 +18,7 @@ export class CreateUsuarioDto {
     
     celular: string;
     
-    endereço: string;
+    endereco: string;
     
     cep: string;
     
