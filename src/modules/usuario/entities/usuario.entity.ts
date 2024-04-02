@@ -44,7 +44,40 @@ export class Usuario {
     
     @Column()
     estado: string;
+
+    @Column()
+    cnh: string;
+
+    @Column()
+    genero: string;
+
+    @Column()
+    categoria: string;
+     
+    @Column()
+    historicoInfracoes: string;
     
+    @Column()
+    historicoAcidentes: string;
+
+    @Column()
+    banco: string;
+
+    @Column()
+    numeroConta: string;
+
+    @Column()
+    digitoVerificador: string;
+    
+    @Column()
+    tipo: string;
+
+    @Column()
+    nomeEmergencia: string;
+
+    @Column()
+    telefoneEmergencia: string;
+
     @Column()
     statusConta: string;
     

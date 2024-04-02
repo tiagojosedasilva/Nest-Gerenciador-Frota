@@ -28,4 +28,27 @@ export class CreateUsuarioDto {
     
     statusConta: string;
 
+    cnh: string;
+
+    genero: string;
+
+    categoria: string;
+    
+    historicoInfracoes: string;
+
+    historicoAcidentes: string;
+
+    banco: string;
+
+    numeroConta: string;
+
+    digitoVerificador: string;
+
+    tipo: string;
+
+    nomeEmergencia: string;
+
+    telefoneEmergencia: string;
+
+
 }
