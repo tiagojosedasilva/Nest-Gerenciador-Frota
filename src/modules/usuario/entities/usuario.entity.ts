@@ -28,7 +28,7 @@ export class Usuario {
     rg: string;
     
     @Column()
-    dataNascimento: Date;
+    dataNascimento: Date | string;
     
     @Column()
     celular: string;
