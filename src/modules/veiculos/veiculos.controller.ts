@@ -5,7 +5,7 @@ import { UpdateVeiculoDto } from './dto/update-veiculo.dto';
 import { ApiTags } from '@nestjs/swagger';
 import { AuthGuard } from '@nestjs/passport';
 
-@UseGuards(AuthGuard('jwt'))
+// @UseGuards(AuthGuard('jwt'))
 @ApiTags('Veiculos')
 @Controller('veiculos')
 export class VeiculosController {
