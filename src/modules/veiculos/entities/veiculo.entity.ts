@@ -1,10 +1,14 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Usuario } from "../../usuario/entities/usuario.entity";
 
 @Entity()
 export class Veiculo {
 
     @PrimaryGeneratedColumn()
     id: number
+
+    @OneToOne(() => Usuario, (usuario) => usuario.idVeiculo2)
+    usuario: Usuario;
 
     @Column()
     placa: string

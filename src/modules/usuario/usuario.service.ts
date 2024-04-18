@@ -23,7 +23,10 @@ export class UsuarioService {
 
   async findAll() {
     try {
-      return await this.usuarioRepository.find()
+      return await this.usuarioRepository.find({
+        select: ['idVeiculo2'],
+        relations: ['idVeiculo2']
+      })
     } catch (error) {
       console.error(error)
       throw new ForbiddenException(error)

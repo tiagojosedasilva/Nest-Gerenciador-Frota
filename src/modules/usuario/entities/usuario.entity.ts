@@ -1,10 +1,14 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Veiculo } from "../../veiculos/entities/veiculo.entity";
 
 @Entity("usuario")
 export class Usuario {
 
     @PrimaryGeneratedColumn()
     id: number;
+
+    @Column("int", { name: "id_veiculo", nullable: true, unique: true })
+    idVeiculo: number | null;
 
     @Column()
     idCliente: number
@@ -88,6 +92,13 @@ export class Usuario {
     @Column()
     @UpdateDateColumn()
     dataAtualizacao: Date;
+
+    @OneToOne(() => Veiculo, (veiculo) => veiculo.usuario, {
+        onDelete: "NO ACTION",
+        onUpdate: "NO ACTION",
+    })
+    @JoinColumn([{ name: "id_veiculo", referencedColumnName: "id" }])
+    idVeiculo2: Veiculo
 
     // @BeforeInsert()
     // hashPassword(){
