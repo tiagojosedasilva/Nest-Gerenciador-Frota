@@ -1,8 +1,9 @@
-import { Injectable, Inject, ForbiddenException } from "@nestjs/common";
+import { Injectable, Inject, ForbiddenException, NotFoundException } from "@nestjs/common";
 import { Repository } from "typeorm";
 import { CreateUsuarioDto } from "./dto/create-usuario.dto";
 import { UpdateUsuarioDto } from "./dto/update-usuario.dto";
 import { Usuario } from "./entities/usuario.entity";
+import { NotFoundError } from "rxjs";
 
 @Injectable()
 export class UsuarioService {
@@ -35,7 +36,7 @@ export class UsuarioService {
 
   async findOne(id: number) {
     try {
-      return await this.usuarioRepository.findOneBy({id});
+      return await this.usuarioRepository.findOne({where: {id}, relations: ['idVeiculo2']});
     } catch (error) {
       console.error(error)
       throw new ForbiddenException(error)
@@ -66,6 +67,20 @@ export class UsuarioService {
     } catch (error) {
       console.error(error)
       throw new ForbiddenException(error)
+    }
+  }
+
+  async findByVeiculo(id: number){
+    try {
+      const usuario = this.usuarioRepository.findOne({
+        where: {
+          idVeiculo: id
+        }
+      })
+      return usuario
+    } catch (error) {
+      console.error(error)
+      throw new NotFoundException(error)
     }
   }
 

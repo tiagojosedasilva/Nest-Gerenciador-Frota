@@ -26,6 +26,11 @@ export class VeiculosController {
     return this.veiculosService.findOne(+id);
   }
 
+  @Get('buscar-usuario-idveiculo/:id')
+  findOneByIdVeiculo(@Param('id') id: string){
+    return this.veiculosService.findUsuarioByIdVeiculo(+id)
+  }
+
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateVeiculoDto: UpdateVeiculoDto) {
     return this.veiculosService.update(+id, updateVeiculoDto);
