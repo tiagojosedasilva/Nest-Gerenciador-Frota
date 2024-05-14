@@ -1,4 +1,4 @@
-import { Inject, Injectable, NotFoundException } from '@nestjs/common';
+import { ForbiddenException, Inject, Injectable, NotFoundException } from '@nestjs/common';
 import { CreateVeiculoDto } from './dto/create-veiculo.dto';
 import { UpdateVeiculoDto } from './dto/update-veiculo.dto';
 import { Repository } from 'typeorm';
@@ -68,4 +68,14 @@ export class VeiculosService {
       throw new NotFoundException(error)
     }
   }
+
+  async listVeiculoByConsumo(){
+    try {
+      return this.veiculosRepository.find({order: {consumoMedioLitro: 'DESC'}})
+    } catch (error) {
+      console.error(error)
+      throw new ForbiddenException(error)
+    }
+  }
+  
 }

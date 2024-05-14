@@ -10,7 +10,7 @@ async function bootstrap() {
   .setTitle('FrotHub')
   .setDescription('The FrotHub API description')
   .setVersion('1.0')
-  .addTag('FrotHub')
+  // .addTag('FrotHub')
   .build();
   
   const document = SwaggerModule.createDocument(app, config);

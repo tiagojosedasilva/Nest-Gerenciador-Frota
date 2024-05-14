@@ -21,6 +21,11 @@ export class VeiculosController {
     return this.veiculosService.findAll();
   }
 
+  @Get('veiculos-por-consumo')
+  listVeiculoByConsumo(){
+    return this.veiculosService.listVeiculoByConsumo()
+  }
+
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.veiculosService.findOne(+id);

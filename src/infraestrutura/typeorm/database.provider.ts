@@ -2,6 +2,8 @@ import { UsuarioVeiculo } from 'src/modules/usuario-veiculo/entities/usuario-vei
 import { Usuario } from 'src/modules/usuario/entities/usuario.entity';
 import { Veiculo } from 'src/modules/veiculos/entities/veiculo.entity';
 import { DataSource } from 'typeorm';
+import { Rota } from '../../modules/rotas/entities/rota.entity';
+import { Chamado } from '../../modules/chamados/entities/chamado.entity';
 
 export const databaseProviders = [
   {
@@ -15,9 +17,11 @@ export const databaseProviders = [
         password: '-cCbeED1ac64f2gGg53Gbda-CEHh5CDa',
         database: 'railway',
         entities: [
-            Usuario,
-            Veiculo,
-            UsuarioVeiculo
+          Chamado,  
+          Rota,
+          Usuario,
+          UsuarioVeiculo,
+          Veiculo,
         ],
         synchronize: true,
       });
