@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Usuario } from "../../usuario/entities/usuario.entity";
 
 @Entity()
 export class Rota {
@@ -30,6 +31,10 @@ export class Rota {
     @Column()
     distancia: string
 
-    @Column()
-    condutor: string
+    @ManyToOne(() => Usuario, (usuario) => usuario.rota, {
+        onDelete: 'NO ACTION',
+        onUpdate: 'NO ACTION'
+    })
+    @JoinColumn([{name: "idCondutor", referencedColumnName: "id"}])
+    idCondutor2: Usuario
 }

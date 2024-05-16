@@ -26,7 +26,7 @@ export class UsuarioService {
     try {
       return await this.usuarioRepository.find({
         select: ['idVeiculo2'],
-        relations: ['idVeiculo2']
+        relations: ['idVeiculo2', 'rota']
       })
     } catch (error) {
       console.error(error)

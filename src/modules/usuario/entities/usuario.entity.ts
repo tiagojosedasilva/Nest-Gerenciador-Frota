@@ -1,5 +1,6 @@
-import { Column, CreateDateColumn, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, JoinColumn, OneToMany, OneToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 import { Veiculo } from "../../veiculos/entities/veiculo.entity";
+import { Rota } from "../../rotas/entities/rota.entity";
 
 @Entity("usuario")
 export class Usuario {
@@ -100,6 +101,10 @@ export class Usuario {
     @JoinColumn([{ name: "id_veiculo", referencedColumnName: "id" }])
     idVeiculo2: Veiculo
 
+    @OneToMany(() => Rota, (rota) => rota.idCondutor2)
+    rota: Rota[]
+
+    
     // @BeforeInsert()
     // hashPassword(){
     //     this.senha = bcrypt.hashSync(this.senha)
