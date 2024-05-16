@@ -17,6 +17,4 @@ export class CreateRotaDto {
     consumo: string
 
     distancia: string
-
-    condutor: string
 }

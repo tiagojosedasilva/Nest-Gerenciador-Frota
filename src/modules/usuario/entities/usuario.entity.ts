@@ -103,7 +103,6 @@ export class Usuario {
 
     @OneToMany(() => Rota, (rota) => rota.idCondutor2)
     rota: Rota[]
-
     
     // @BeforeInsert()
     // hashPassword(){

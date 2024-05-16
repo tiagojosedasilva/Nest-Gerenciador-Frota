@@ -31,10 +31,8 @@ export class Rota {
     @Column()
     distancia: string
 
-    @ManyToOne(() => Usuario, (usuario) => usuario.rota, {
-        onDelete: 'NO ACTION',
-        onUpdate: 'NO ACTION'
-    })
-    @JoinColumn([{name: "idCondutor", referencedColumnName: "id"}])
-    idCondutor2: Usuario
+    @ManyToOne(() => Usuario, (usuario) => usuario.rota)
+    @JoinColumn({ name: 'idCondutor', referencedColumnName: 'id' })
+    idCondutor2: Usuario;
+
 }
