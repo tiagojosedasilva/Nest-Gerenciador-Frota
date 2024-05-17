@@ -23,7 +23,7 @@ export class RotasService {
 
   async findAll() {
     try {
-      return await this.rotaRepository.find()
+      return await this.rotaRepository.find({relations: ['idCondutor2']})
     } catch (error) {
       console.log(error)
       throw new ForbiddenException(error)
@@ -32,7 +32,7 @@ export class RotasService {
 
   async findOne(id: number) {
     try {
-      return await this.rotaRepository.findOne({where: {id: id}})
+      return await this.rotaRepository.findOne({where: {id: id}, relations: ['idCondutor2']})
     } catch (error) {
       console.log(error)
       throw new ForbiddenException(error)
