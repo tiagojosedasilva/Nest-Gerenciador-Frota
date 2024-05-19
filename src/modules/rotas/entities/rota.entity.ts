@@ -14,6 +14,12 @@ export class Rota {
     destino: string
 
     @Column()
+    numero: number
+
+    @Column()
+    placa: string
+
+    @Column()
     bairro: string
 
     @Column()
