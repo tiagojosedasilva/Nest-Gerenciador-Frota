@@ -13,9 +13,10 @@ export class UsuarioService {
     private readonly usuarioRepository: Repository<Usuario>
   ){}
 
-  async create(createUsuarioDto: CreateUsuarioDto) {
+  async create(updateUsuarioDto: UpdateUsuarioDto) {
     try {
-      return await this.usuarioRepository.save(createUsuarioDto)
+      const usuario: CreateUsuarioDto = this.usuarioRepository.create(updateUsuarioDto)
+      return await this.usuarioRepository.save(usuario)
     } catch (error) {
       console.error(error)
       throw new ForbiddenException(error)

@@ -1,56 +1,56 @@
 export class CreateUsuarioDto {
 
-    nome: string;
+    nome: string | null;
     
-    idCliente: number
+    idCliente: number | null
 
-    idVeiculo: number;
+    idVeiculo: number | null;
 
-    email: string;
+    email: string | null;
     
-    senha: string;
+    senha: string | null;
     
-    tipoUsuario: number;
+    tipoUsuario: number | null;
     
-    cpf: string;
+    cpf: string | null;
     
-    rg: string;
+    rg: string | null;
     
-    dataNascimento: string;
+    dataNascimento: string | null;
     
-    celular: string;
+    celular: string | null;
     
-    endereco: string;
+    endereco: string | null;
     
-    cep: string;
+    cep: string | null;
     
-    cidade: string;
+    cidade: string | null;
     
-    estado: string;
+    estado: string | null;
     
-    statusConta: string;
+    statusConta: string | null;
 
-    cnh: string;
+    cnh: string | null;
 
-    genero: string;
+    genero: string | null;
 
-    categoria: string;
+    categoria: string | null;
     
-    historicoInfracoes: string;
+    historicoInfracoes: string | null;
 
-    historicoAcidentes: string;
+    historicoAcidentes: string | null;
 
-    banco: string;
+    banco: string | null;
 
-    numeroConta: string;
+    numeroConta: string | null;
 
-    digitoVerificador: string;
+    digitoVerificador: string | null;
 
-    tipo: string;
+    tipo: string | null;
 
-    nomeEmergencia: string;
+    nomeEmergencia: string | null;
 
-    telefoneEmergencia: string;
+    telefoneEmergencia: string | null;
 
 
 }
