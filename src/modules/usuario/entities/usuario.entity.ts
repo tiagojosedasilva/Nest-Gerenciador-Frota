@@ -58,7 +58,10 @@ export class Usuario {
 
     @Column()
     categoria: string;
-     
+    
+    @Column()
+    validade: string | null;
+    
     @Column()
     historicoInfracoes: string;
     

@@ -13,7 +13,7 @@ export class CreateUsuarioDto {
     tipoUsuario: number | null;
     
     cpf: string | null;
-    
+
     rg: string | null;
     
     dataNascimento: string | null;
@@ -52,5 +52,5 @@ export class CreateUsuarioDto {
 
     telefoneEmergencia: string | null;
 
-
+    validade: string | null;
 }
