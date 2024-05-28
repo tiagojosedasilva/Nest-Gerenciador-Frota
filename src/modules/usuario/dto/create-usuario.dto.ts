@@ -1,13 +1,17 @@
-export class CreateUsuarioDto {
+import { ApiProperty } from "@nestjs/swagger";
 
+export class CreateUsuarioDto {
+    @ApiProperty({ example: 'nome', description: 'O nome do usuario' })
     nome: string | null;
     
     idCliente: number | null
 
     idVeiculo: number | null;
 
+    @ApiProperty({ example: 'email', description: 'O email do usuario' })
     email: string | null;
-    
+
+    @ApiProperty({ example: 'senha', description: 'O senha do usuario' })
     senha: string | null;
     
     tipoUsuario: number | null;

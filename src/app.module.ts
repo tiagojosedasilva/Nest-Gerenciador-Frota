@@ -7,9 +7,10 @@ import { UsuarioVeiculoModule } from './modules/usuario-veiculo/usuario-veiculo.
 import { AuthModule } from './auth/auth.module';
 import { RotasModule } from './modules/rotas/rotas.module';
 import { ChamadosModule } from './modules/chamados/chamados.module';
+import { AvariasVeiculoModule } from './modules/avarias-veiculo/avarias-veiculo.module';
 
 @Module({
-  imports: [UsuarioModule, VeiculosModule, UsuarioVeiculoModule, AuthModule, RotasModule, ChamadosModule],
+  imports: [UsuarioModule, VeiculosModule, UsuarioVeiculoModule, AuthModule, RotasModule, ChamadosModule, AvariasVeiculoModule],
   controllers: [AppController],
   providers: [AppService],
 })

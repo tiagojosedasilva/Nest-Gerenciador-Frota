@@ -30,6 +30,21 @@ export class ChamadosService {
     }
   }
 
+  async findAllChamadosAbertos() {
+    try {
+      return await  this.chamadosRepository.find(
+        {
+          where: {
+            statusChamado: false
+          }
+        }
+      )
+    } catch (error) {
+      console.log(error)
+      throw new ForbiddenException(error)
+    }
+  }
+
   async findOne(id: number) {
     try {
       return await  this.chamadosRepository.findOne({where: {id}})

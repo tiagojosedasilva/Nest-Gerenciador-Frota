@@ -29,7 +29,7 @@ import { Secret } from './contants/auth.constants';
     async gerarToken(payload: Usuario) {
       return {
         access_token: this.jwtService.sign(
-          { email: payload.email },
+          { email: payload.email, id: payload.id, nome: payload.nome},
           {
             secret: Secret.secretKey,
             expiresIn: '7days',

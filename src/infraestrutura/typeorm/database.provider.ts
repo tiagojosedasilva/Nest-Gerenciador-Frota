@@ -4,6 +4,7 @@ import { Veiculo } from 'src/modules/veiculos/entities/veiculo.entity';
 import { DataSource } from 'typeorm';
 import { Rota } from '../../modules/rotas/entities/rota.entity';
 import { Chamado } from '../../modules/chamados/entities/chamado.entity';
+import { AvariasVeiculo } from 'src/modules/avarias-veiculo/entities/avarias-veiculo.entity';
 
 export const databaseProviders = [
   {
@@ -22,6 +23,7 @@ export const databaseProviders = [
           Usuario,
           UsuarioVeiculo,
           Veiculo,
+          AvariasVeiculo
         ],
         synchronize: true,
       });

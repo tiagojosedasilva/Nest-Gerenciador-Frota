@@ -19,6 +19,11 @@ export class ChamadosController {
     return this.chamadosService.findAll();
   }
 
+  @Get("chamadosAbertos")
+  findAllChamadosAbertos() {
+    return this.chamadosService.findAllChamadosAbertos();
+  }
+
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.chamadosService.findOne(+id);

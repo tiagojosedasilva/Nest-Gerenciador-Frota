@@ -19,6 +19,9 @@ export class Chamado {
     idCondutor: number
 
     @Column()
+    statusChamado: boolean // 1 atendido 0 em aberto
+
+    @Column()
     dataHoraCriacao: string
 
     @Column()
