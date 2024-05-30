@@ -2,12 +2,13 @@ import { ForbiddenException, Inject, Injectable, NotFoundException } from '@nest
 import { CreateAvariasVeiculoDto } from './dto/create-avarias-veiculo.dto';
 import { UpdateAvariasVeiculoDto } from './dto/update-avarias-veiculo.dto';
 import { Repository } from 'typeorm';
+import { AvariasVeiculo } from './entities/avarias-veiculo.entity';
 
 @Injectable()
 export class AvariasVeiculoService {
   constructor(
     @Inject('AVARIAS_REPOSITORY')
-    private readonly avariasRepository: Repository<AvariasVeiculoService>
+    private readonly avariasRepository: Repository<AvariasVeiculo>
   ){}
   
 
@@ -20,9 +21,15 @@ export class AvariasVeiculoService {
   //   }
   // }
 
- async findAll() {
+ async findAll(idUsuariop: number) {
     try {
-      return await this.avariasRepository.find({ relations: ["veiculo"] })
+      return await this.avariasRepository.find({ 
+        relations: ["veiculo"],
+        where: {
+          idUsuario: idUsuariop,
+        }
+      })
+
     } catch (error) {
       console.error(error)
       throw new ForbiddenException(error)
