@@ -1,4 +1,4 @@
-import { ForbiddenException, Inject, Injectable } from '@nestjs/common';
+import { ForbiddenException, Inject, Injectable, NotFoundException } from '@nestjs/common';
 import { CreateAvariasVeiculoDto } from './dto/create-avarias-veiculo.dto';
 import { UpdateAvariasVeiculoDto } from './dto/update-avarias-veiculo.dto';
 import { Repository } from 'typeorm';
@@ -9,18 +9,24 @@ export class AvariasVeiculoService {
     @Inject('AVARIAS_REPOSITORY')
     private readonly avariasRepository: Repository<AvariasVeiculoService>
   ){}
+  
 
-  async create(createAvariasDto: CreateAvariasVeiculoDto) {
+  // async create(createVeiculoDto: CreateAvariasVeiculoDto) {
+  //   try {
+  //     return await this.avariasRepository.save(createVeiculoDto)
+  //   } catch (error) {
+  //     console.error(error)
+  //     throw new NotFoundException(error)
+  //   }
+  // }
+
+ async findAll() {
     try {
-      return await  this.avariasRepository.save(createAvariasDto)
+      return await this.avariasRepository.find({ relations: ["veiculo"] })
     } catch (error) {
-      console.log(error)
+      console.error(error)
       throw new ForbiddenException(error)
     }
-  }
-
-  findAll() {
-    return `This action returns all avariasVeiculo`;
   }
 
   findOne(id: number) {

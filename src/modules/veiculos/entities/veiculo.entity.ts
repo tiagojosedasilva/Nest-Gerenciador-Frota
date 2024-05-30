@@ -1,5 +1,6 @@
-import { Column, CreateDateColumn, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, JoinColumn, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Usuario } from "../../usuario/entities/usuario.entity";
+import { AvariasVeiculo } from "src/modules/avarias-veiculo/entities/avarias-veiculo.entity";
 
 @Entity()
 export class Veiculo {
@@ -46,5 +47,8 @@ export class Veiculo {
 
     @Column()
     consumoMedioLitro: number
+
+    @OneToMany(() => AvariasVeiculo, avaria => avaria.veiculo)
+    avarias: AvariasVeiculo[];
 }
 
