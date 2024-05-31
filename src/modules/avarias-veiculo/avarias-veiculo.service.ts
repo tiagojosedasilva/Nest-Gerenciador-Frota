@@ -11,15 +11,14 @@ export class AvariasVeiculoService {
     private readonly avariasRepository: Repository<AvariasVeiculo>
   ){}
   
-
-  // async create(createVeiculoDto: CreateAvariasVeiculoDto) {
-  //   try {
-  //     return await this.avariasRepository.save(createVeiculoDto)
-  //   } catch (error) {
-  //     console.error(error)
-  //     throw new NotFoundException(error)
-  //   }
-  // }
+  async create(createVeiculoDto: CreateAvariasVeiculoDto) {
+    try {
+      return await this.avariasRepository.save(createVeiculoDto)
+    } catch (error) {
+      console.error(error)
+      throw new NotFoundException(error)
+    }
+  }
 
  async findAll(idUsuariop: number) {
     try {
@@ -35,6 +34,15 @@ export class AvariasVeiculoService {
       throw new ForbiddenException(error)
     }
   }
+  
+ async buscarAvariasPorVeiculo(idUsuariop: number) {
+  try {
+    return await this.avariasRepository.query('SELECT * FROM avarias_veiculo WHERE idUsuario = ?', [idUsuariop]);
+  } catch (error) {
+    console.error(error)
+    throw new ForbiddenException(error)
+  }
+}
 
   findOne(id: number) {
     return `This action returns a #${id} avariasVeiculo`;

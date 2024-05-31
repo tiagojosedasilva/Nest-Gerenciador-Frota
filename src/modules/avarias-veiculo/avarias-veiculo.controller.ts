@@ -9,14 +9,19 @@ import { ApiTags } from '@nestjs/swagger';
 export class AvariasVeiculoController {
   constructor(private readonly avariasVeiculoService: AvariasVeiculoService) {}
 
-  // @Post()
-  // create(@Body() createAvariasVeiculoDto: CreateAvariasVeiculoDto) {
-  //   return this.avariasVeiculoService.create(createAvariasVeiculoDto);
-  // }
+  @Post()
+  create(@Body() createAvariasVeiculoDto: CreateAvariasVeiculoDto) {
+    return this.avariasVeiculoService.create(createAvariasVeiculoDto);
+  }
 
   @Get(':idUsuariop')
   findAll(@Param('idUsuariop') idUsuariop: number) {
     return this.avariasVeiculoService.findAll(idUsuariop);
+  }
+
+  @Get('buscarAvariasPorUsuario/:idUsuariop')
+  buscarAvariasPorVeiculo(@Param('idUsuariop') idUsuariop: number) {
+    return this.avariasVeiculoService.buscarAvariasPorVeiculo(idUsuariop);
   }
 
   @Get(':id')
