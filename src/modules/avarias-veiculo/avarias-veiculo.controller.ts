@@ -14,9 +14,9 @@ export class AvariasVeiculoController {
   //   return this.avariasVeiculoService.create(createAvariasVeiculoDto);
   // }
 
-  @Get()
-  findAll() {
-    return this.avariasVeiculoService.findAll();
+  @Get(':idUsuariop')
+  findAll(@Param('idUsuariop') idUsuariop: number) {
+    return this.avariasVeiculoService.findAll(idUsuariop);
   }
 
   @Get(':id')
