@@ -21,7 +21,7 @@ export class AvariasVeiculoController {
 
   @Get('buscarAvariasPorUsuario/:idUsuariop')
   buscarAvariasPorVeiculo(@Param('idUsuariop') idUsuariop: number) {
-    return this.avariasVeiculoService.buscarAvariasPorVeiculo(idUsuariop);
+    return this.avariasVeiculoService.buscarAvariasPorUsuario(idUsuariop);
   }
 
   @Get(':id')

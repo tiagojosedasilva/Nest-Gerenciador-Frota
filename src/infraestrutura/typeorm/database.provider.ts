@@ -25,7 +25,7 @@ export const databaseProviders = [
           Veiculo,
           AvariasVeiculo
         ],
-        synchronize: false,
+        synchronize: true,
       });
 
       return dataSource.initialize();

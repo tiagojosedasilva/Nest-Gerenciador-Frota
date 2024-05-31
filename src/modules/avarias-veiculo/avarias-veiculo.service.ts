@@ -35,7 +35,7 @@ export class AvariasVeiculoService {
     }
   }
   
- async buscarAvariasPorVeiculo(idUsuariop: number) {
+ async buscarAvariasPorUsuario(idUsuariop: number) {
   try {
     return await this.avariasRepository.query('SELECT * FROM avarias_veiculo WHERE idUsuario = ?', [idUsuariop]);
   } catch (error) {
