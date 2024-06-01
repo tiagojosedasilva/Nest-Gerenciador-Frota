@@ -12,4 +12,7 @@ export class CreateAvariasVeiculoDto {
 
     @ApiProperty({ example: 'teste', description: 'mensagemAvaria' })
     mensagemAvaria: string;
+
+    @ApiProperty({ example: 'teste', description: 'statusAvaria' })
+    statusAvaria: string;
 }
