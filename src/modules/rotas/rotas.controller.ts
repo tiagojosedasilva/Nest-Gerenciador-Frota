@@ -24,6 +24,11 @@ export class RotasController {
     return this.rotasService.findOne(+id);
   }
 
+  @Get(':idCondutorP')
+  findRotaDoUsuario(@Param('idCondutorP') idCondutorP: number) {
+    return this.rotasService.findRotaDoUsuario(+idCondutorP);
+  }
+
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateRotaDto: UpdateRotaDto) {
     return this.rotasService.update(+id, updateRotaDto);
