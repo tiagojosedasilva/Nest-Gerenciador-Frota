@@ -24,7 +24,7 @@ export class RotasController {
     return this.rotasService.findOne(+id);
   }
 
-  @Get(':idCondutorP')
+  @Get('rota-by-idCondutor/:idCondutorP')
   findRotaDoUsuario(@Param('idCondutorP') idCondutorP: number) {
     return this.rotasService.findRotaDoUsuario(+idCondutorP);
   }
