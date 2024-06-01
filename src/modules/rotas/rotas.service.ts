@@ -41,7 +41,7 @@ export class RotasService {
 
   async findRotaDoUsuario(idCondutor: number) {
     try {
-      return await this.rotaRepository.findOne({where: {idCondutor: idCondutor,}, relations: ['idCondutor2']})
+      return await this.rotaRepository.findOne({where: {idCondutor: idCondutor,}})
     } catch (error) {
       console.log(error)
       throw new ForbiddenException(error)
