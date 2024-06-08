@@ -22,6 +22,11 @@ export class AbastecimentoController {
     return this.abastecimentoService.findOne(+id);
   }
 
+  @Get('buscar-por-idCondutor/:id')
+  findByIdUsuario(@Param('id') id: string) {
+    return this.abastecimentoService.findByIdUsuario(+id);
+  }
+
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateAbastecimentoDto: UpdateAbastecimentoDto) {
     return this.abastecimentoService.update(+id, updateAbastecimentoDto);

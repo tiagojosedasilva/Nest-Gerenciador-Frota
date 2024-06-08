@@ -41,6 +41,15 @@ export class AbastecimentoService {
     }
   }
 
+  async findByIdUsuario(id: number){
+    try {
+      return await this.abastecimentosRepository.find({where: {idUsuario: id}})
+    } catch (error) {
+      console.log(error)
+      throw new ForbiddenException(error)
+    }
+  }
+
   async update(id: number, updateAbastecimentoDto: UpdateAbastecimentoDto) {
     try {
       updateAbastecimentoDto.totalGasto = (+updateAbastecimentoDto.valorCombustivel * +updateAbastecimentoDto.quantidadeLitros).toString()
