@@ -1,6 +1,7 @@
 import { Column, CreateDateColumn, Entity, JoinColumn, OneToMany, OneToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 import { Veiculo } from "../../veiculos/entities/veiculo.entity";
 import { Rota } from "../../rotas/entities/rota.entity";
+import { Abastecimento } from "src/modules/abastecimento/entities/abastecimento.entity";
 
 @Entity("usuario")
 export class Usuario {
@@ -106,6 +107,10 @@ export class Usuario {
 
     @OneToMany(() => Rota, (rota) => rota.idCondutor2)
     rota: Rota[]
+
+    @OneToMany(() => Abastecimento, (abastecimentos) => abastecimentos.idUsuario)
+    abastecimentos: Abastecimento[]
+    
     
     // @BeforeInsert()
     // hashPassword(){

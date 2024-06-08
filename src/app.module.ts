@@ -8,9 +8,10 @@ import { AuthModule } from './auth/auth.module';
 import { RotasModule } from './modules/rotas/rotas.module';
 import { ChamadosModule } from './modules/chamados/chamados.module';
 import { AvariasVeiculoModule } from './modules/avarias-veiculo/avarias-veiculo.module';
+import { AbastecimentoModule } from './modules/abastecimento/abastecimento.module';
 
 @Module({
-  imports: [UsuarioModule, VeiculosModule, UsuarioVeiculoModule, AuthModule, RotasModule, ChamadosModule, AvariasVeiculoModule],
+  imports: [UsuarioModule, VeiculosModule, UsuarioVeiculoModule, AuthModule, RotasModule, ChamadosModule, AvariasVeiculoModule, AbastecimentoModule],
   controllers: [AppController],
   providers: [AppService],
 })
